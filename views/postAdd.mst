@@ -1,0 +1,33 @@
+{{>header}}
+
+<h1>Adicionar Post</h1>
+
+<form method='post' enctype="multipart/form-data">
+    <div>
+        <label for='photo'>Imagem</label>
+        <input name='photo' id='photo' type='file' />
+    </div>
+
+    <div>
+        <label for='title'>Título</label>
+        <input name='title' id='title' type='text' />
+    </div>
+
+    <div>
+        <label for='body'>Corpo</label>
+        <textarea name='body' id='body'></textarea>
+    </div>
+
+    <div>
+        <label for='tags'>Tags (Separadas por vírgula)</label>
+        <input name='tags' id='tags' />
+    </div>
+
+    <div>
+        <input type='submit' value='Salvar' />
+    </div>
+</form>
+
+<a href="/blog">Voltar</a>
+
+{{>footer}}

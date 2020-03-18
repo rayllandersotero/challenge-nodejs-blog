@@ -1,0 +1,16 @@
+{{>header}}
+
+<h1>Esqueci minha senha</h1>
+
+<form method='post'>
+    <div>
+        <label for='email'>Email:</label>
+        <input name='email' id='email' type='email' />
+    </div>
+
+    <div>
+        <input type='submit' value='Redefinir senha' />
+    </div>
+</form>
+
+{{>footer}}

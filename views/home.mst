@@ -1,0 +1,41 @@
+{{>header}}
+
+{{#pageTitle}}<h1>{{pageTitle}}</h1>{{/pageTitle}}
+
+{{{html}}}
+
+{{!Aqui é um comentário}}
+
+{{#techs.active}}
+    <h2>
+        Lista de Array
+    </h2>
+
+    <ul>
+        {{#techs.tech}}
+            <li>{{.}}</li>
+        {{/techs.tech}}
+    </ul>
+    
+    {{^techs.tech}}
+        <p>Não há array para listar</p>
+    {{/techs.tech}}
+{{/techs.active}}
+
+{{#social.active}}
+    <h2>
+        Lista de Objetos
+    </h2>
+
+    <ul>
+        {{#social.links}}
+            <li>{{link}}</li>
+        {{/social.links}}
+    </ul>
+
+    {{^social.links}}
+        <p>Não há objetos para listar</p>
+    {{/social.links}}
+{{/social.active}}
+
+{{>footer}}

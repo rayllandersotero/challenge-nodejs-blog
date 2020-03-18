@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{h.siteLang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{#pageTitle}}{{pageTitle}} - {{/pageTitle}}{{h.siteTitle}}</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+    {{#flashes}}
+        {{#success}}
+            <div class="warning">{{.}}</div>
+        {{/success}}
+
+        {{#error}}
+            <div class="warning">{{.}}</div>
+        {{/error}}
+
+        {{#info}}
+            <div class="warning">{{.}}</div>
+        {{/info}}
+    {{/flashes}}
+
+<header>
+    <h1>Bem-vindo à {{h.siteTitle}}{{#user}}, {{user.name}}.{{/user}}</h1>
+
+    <ul>
+        {{#h.menu}}
+            <li><a href="{{slug}}" title="{{title}}">{{text}}</a></li>
+        {{/h.menu}}
+    </ul>
+</header>
