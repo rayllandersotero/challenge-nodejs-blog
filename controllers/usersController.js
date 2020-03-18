@@ -1,14 +1,6 @@
-const db_example = require('../db_example')
 const User = require('../models/User')
 const crypto = require('crypto')
 const mailHandler = require('../handlers/mailHandler')
-
-exports.index = (req, res) => {
-    let user_id = req.params.id
-    db_example.users.map(item => {
-        if (user_id == item.id) { res.json(item) }
-    })
-}
 
 exports.login = (req, res) => {
     res.render('login')

@@ -1,17 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const homeController = require('../controllers/homeController')
 const usersController = require('../controllers/usersController')
-const jsonController = require('../controllers/jsonController')
 const postController = require('../controllers/postController')
 const blogController = require('../controllers/blogController')
 const imageMiddleware = require('../middlewares/imageMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
 
-router.get('/', homeController.index)
-router.get('/json', jsonController.index)
-router.get('/users/:id', usersController.index)
+router.get('/', blogController.index)
+router.get('/blog/:slug', blogController.post)
 
 router.get('/login', usersController.login)
 router.post('/login', usersController.loginAction)
@@ -35,8 +32,5 @@ router.post('/post/add', authMiddleware.isLogged, imageMiddleware.upload, imageM
 
 router.get('/post/:slug/edit', authMiddleware.isLogged, postController.edit)
 router.post('/post/:slug/edit', authMiddleware.isLogged, imageMiddleware.upload, imageMiddleware.resize, postController.editAction)
-
-router.get('/blog', blogController.index)
-router.get('/blog/:slug', blogController.post)
 
 module.exports = router

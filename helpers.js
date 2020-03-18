@@ -4,15 +4,8 @@ exports.siteLang = "pt_BR"
 exports.siteTitle = siteTitle
 exports.menu = [
     {
-        text: "Home",
-        slug: "/",
-        title: `Página inicial ${siteTitle}`,
-        guest: true,
-        logged: true
-    },
-    {
         text: "Blog",
-        slug: "/blog",
+        slug: "/",
         title: `Blog de ${siteTitle}`,
         guest: true,
         logged: true
