@@ -1,11 +1,13 @@
 {{>header}}
 
 <h1>{{post.title}}</h1>
-<p>{{post.body}}<p>
-<br />
-<a href="/blog">Voltar</a>
-{{#user}}
-<a href="/post/{{post.slug}}/edit">Editar</a>
-{{/user}}
+<p>{{post.body}}</p>
+
+<div>
+    <a href="/">Back</a>
+    {{#user}}
+    <a href="/post/{{post.slug}}/edit" class="user-edit-btn">Edit</a>
+    {{/user}}
+</div>
 
 {{>footer}}

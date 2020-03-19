@@ -13,10 +13,10 @@ exports.add = async (req, res) => {
     try {
         await preparePost.save()
     } catch (error) {
-        req.flash('error', `Erro: ${error}`)
+        req.flash('error', `Error: ${error}`)
         return res.redirect('/post/add')
     }
-    req.flash('success', 'Post salvo com sucesso')
+    req.flash('success', 'Saved successfully')
     res.redirect('/post/add')
 }
 
@@ -38,9 +38,9 @@ exports.editAction = async (req, res) => {
             }
         )
     } catch (error) {
-        req.flash('error', `Erro: ${error}`)
-        return res.redirect('/blog')
+        req.flash('error', `Error: ${error}`)
+        return res.redirect('/')
     }
-    req.flash('success', 'Post atualizado')
-    res.redirect('/blog')
+    req.flash('success', 'Post updated')
+    res.redirect('/')
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{h.siteLang}}">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -24,7 +24,7 @@
     {{/flashes}}
 
 <header>
-    <h1>Bem-vindo à {{h.siteTitle}}{{#user}}, {{user.name}}.{{/user}}</h1>
+    <h1>Welcome to {{h.siteTitle}}{{#user}}, {{user.name}}.{{/user}}</h1>
 
     <ul>
         {{#h.menu}}
@@ -32,3 +32,5 @@
         {{/h.menu}}
     </ul>
 </header>
+<section>
+    <div class="column">

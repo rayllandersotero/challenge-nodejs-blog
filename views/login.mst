@@ -1,15 +1,15 @@
 {{>header}}
 
-<h1>Faça o seu Login</h1>
+<h1>Do your login</h1>
 
 <form method="post">
-    <label for='email'>Email</label>
+    <label for='email'>E-mail</label>
     <input type="email" name="email" id="email">
 
-    <label for='password'>Senha</label>
+    <label for='password'>Password</label>
     <input type="password" name="password" id="password">
 
-    <input type="submit" value="Logar" />
+    <input type="submit" value="Login" />
 </form>
 
-<a href="/login/forget">Esqueci minha senha</a>
+<a href="/login/forget">Forget my password</a>

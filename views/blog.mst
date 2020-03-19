@@ -3,24 +3,33 @@
 {{#pageTitle}}<h1>{{pageTitle}}</h1>{{/pageTitle}}
 
 <div class="tags">
+    <div class="tag"><a href="/">All Tags</a></div>
     {{#tags}}
-        <div class="tag {{class}}"><a href="/blog/?t={{_id}}">{{_id}} ({{count}})</a></div>
+        <div class="tag {{class}}"><a href="/?t={{_id}}">{{_id}} ({{count}})</a></div>
     {{/tags}}
 </div>
 
+<div class="posts">
 {{#posts}}
     <div class="post">
         {{#photo}}
             <a href="/blog/{{slug}}"><img src="/media/{{photo}}"/></a>
         {{/photo}}
+
         <a href="/blog/{{slug}}"><h2>{{title}}</h2></a>
-        <small>Autor: {{author.name}}</small>
-        <p>{{body}}<p>
-        <a href="/blog/{{slug}}">Ler mais</a>
-        {{#user}}
-        <a href="/post/{{slug}}/edit">Editar</a>
-        {{/user}}
+
+        <small>Author: {{author.name}}</small>
+
+        <p class="post-text">{{body}}</p>
+
+        <div class="post-links">
+            <a href="/blog/{{slug}}">See more</a>
+            {{#user}}
+            <a href="/post/{{slug}}/edit">Edit</a>
+            {{/user}}
+        </div>
     </div>
 {{/posts}}
+</div>
 
 {{>footer}}

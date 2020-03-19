@@ -1,15 +1,15 @@
 {{>header}}
 
-<h1>Esqueci minha senha</h1>
+<h1>Forget my password</h1>
 
 <form method='post'>
     <div>
-        <label for='email'>Email:</label>
+        <label for='email'>E-mail:</label>
         <input name='email' id='email' type='email' />
     </div>
 
     <div>
-        <input type='submit' value='Redefinir senha' />
+        <input type='submit' value='Redefine' />
     </div>
 </form>
 

@@ -10,12 +10,12 @@ exports.loginAction = (req, res) => {
     const auth = User.authenticate()
     auth(req.body.email, req.body.password, (error, result) => {
         if (!result) {
-            req.flash('error', 'Falha ao logar')
+            req.flash('error', 'Login Fail')
             res.redirect('/login')
             return
         }
         req.login(result, () => { })
-        req.flash('success', 'Logado com sucesso')
+        req.flash('success', 'Successfully entered')
         res.redirect('/')
     })
 }
@@ -28,11 +28,11 @@ exports.registerAction = (req, res) => {
     const newUser = new User(req.body)
     User.register(newUser, req.body.password, error => {
         if (error) {
-            req.flash('eroor', `Erro ao se cadastrar: ${error}`)
+            req.flash('error', `Erro on connect: ${error}`)
             res.redirect('/register')
             return
         }
-        req.flash('success', 'Usuário cadastrado com sucesso')
+        req.flash('success', 'User created successufully')
         res.redirect('/login')
     })
 }
@@ -54,9 +54,9 @@ exports.profileAction = async (req, res) => {
             { new: true, runValidators: true }
         )
     } catch (error) {
-        req.flash('error', `Erro: ${error.messege}`)
+        req.flash('error', `Error: ${error.messege}`)
     }
-    req.flash('success', 'Dados atualizados')
+    req.flash('success', 'Updated data')
     res.redirect('/profile')
     return
 }
@@ -68,7 +68,7 @@ exports.forget = (req, res) => {
 exports.forgetAction = async (req, res) => {
     const user = await User.findOne({ email: req.body.email }).exec()
     if (!user) {
-        req.flash('error', 'Email não encontrado')
+        req.flash('error', 'E-mail not found')
         res.redirect('/login/forget')
         return
     }
@@ -80,17 +80,17 @@ exports.forgetAction = async (req, res) => {
 
     let resetLink = `http://${req.headers.host}/login/forget/${user.resetPasswordToken}`
     let userMail = `${user.name} <${user.email}>`
-    let htmlMail = `Testando email link:<br><a href="${resetLink}">Resetar senha</a>`
-    let textMail = `Testando email link: ${resetLink}`
+    let htmlMail = `Reset link:<br><a href="${resetLink}">Reset password</a>`
+    let textMail = `Reset link: ${resetLink}`
 
     mailHandler.send({
         to: userMail,
-        subject: 'Resetar senha',
+        subject: 'Reset password',
         html: htmlMail,
         text: textMail
     })
 
-    req.flash('success', 'Te enviamos um email com instruções')
+    req.flash('success', 'We send you an email with instructions')
     res.redirect('/login')
 }
 
@@ -101,12 +101,12 @@ exports.forgetToken = async (req, res) => {
     }).exec()
 
     if (!user) {
-        req.flash('error', 'Esse link expirou, faça uma nova requisição')
+        req.flash('error', 'This link has expired, make a new request')
         res.redirect('/login/forget')
         return
     }
 
-    req.flash('info', 'Digite sua nova senha')
+    req.flash('info', 'Type a new password')
     res.render('reset-password')
 }
 
@@ -117,20 +117,20 @@ exports.forgetTokenAction = async (req, res) => {
     }).exec()
 
     if (!user) {
-        req.flash('error', 'Esse link expirou, faça uma nova requisição')
+        req.flash('error', 'This link has expired, make a new request')
         res.redirect('/login/forget')
         return
     }
 
     if (req.body.password !== req.body['password-confirm']) {
-        req.flash('error', 'Confirmação de nova senha não estão iguais')
+        req.flash('error', 'Confirmation of new password are not the same')
         res.redirect('back')
         return
     }
 
     user.setPassword(req.body.password, async () => {
         await user.save()
-        req.flash('success', 'Senha alterada com sucesso')
+        req.flash('success', 'Password updated successfully')
         res.redirect('/')
     })
 }

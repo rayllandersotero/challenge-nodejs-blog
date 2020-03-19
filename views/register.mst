@@ -1,16 +1,16 @@
 {{>header}}
 
-<h1>Faça o seu Cadastro</h1>
+<h1>Do your register</h1>
 
 <form method="post">
-    <label for='name'>Nome</label>
+    <label for='name'>Name</label>
     <input type="text" name="name" id="name">
 
-    <label for='email'>Email</label>
+    <label for='email'>E-mail</label>
     <input type="email" name="email" id="email">
 
-    <label for='password'>Senha</label>
+    <label for='password'>Password</label>
     <input type="password" name="password" id="password">
 
-    <input type="submit" value="Cadastrar" />
+    <input type="submit" value="Register" />
 </form>

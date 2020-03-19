@@ -1,25 +1,25 @@
 {{>header}}
 
-<h1>Edite o seu perfil</h1>
+<h1>Edit your profile</h1>
 
 <form method="post">
-    <label for='name'>Nome</label>
+    <label for='name'>Name</label>
     <input type="text" name="name" id="name" value="{{user.name}}">
 
-    <label for='email'>Email</label>
+    <label for='email'>E-mail</label>
     <input type="email" name="email" id="email" value="{{user.email}}">
 
-    <input type="submit" value="Salvar" />
+    <input type="submit" value="Save" />
 </form>
 
 <hr />
 
 <form method="post" action="/profile/password">
-    <label for='password'>Nova senha</label>
+    <label for='password'>New password</label>
     <input type="password" name="password" id="password">
 
-    <label for='password-confirm'>Confirme a nova senha</label>
+    <label for='password-confirm'>Comfirm new password</label>
     <input type="password" name="password-confirm" id="password-confirm">
 
-    <input type="submit" value="Salvar" />
+    <input type="submit" value="Save" />
 </form>

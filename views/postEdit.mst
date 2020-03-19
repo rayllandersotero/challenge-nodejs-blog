@@ -1,34 +1,24 @@
 {{>header}}
 
-<h1>Editar Post</h1>
+<h1>Edit Post</h1>
 
 <form method='post' enctype="multipart/form-data">
-    <div>
-        <label for='photo'>Imagem</label>
-        {{#post.photo}}
-            <img src="/media/{{post.photo}}" width="150" />
-        {{/post.photo}}
-        <input name='photo' id='photo' type='file' />
-    </div>
+    <label for='photo'>Image</label>
+    {{#post.photo}}
+        <img src="/media/{{post.photo}}" width="150" />
+    {{/post.photo}}
+    <input name='photo' id='photo' type='file' />
 
-    <div>
-        <label for='title'>Título</label>
-        <input name='title' id='title' type='text' value="{{post.title}}" />
-    </div>
+    <label for='title'>Title</label>
+    <input name='title' id='title' type='text' value="{{post.title}}" />
 
-    <div>
-        <label for='body'>Corpo</label>
-        <textarea name='body' id='body'>{{post.body}}</textarea>
-    </div>
+    <label for='body'>Bady</label>
+    <textarea name='body' id='body'>{{post.body}}</textarea>
 
-    <div>
-        <label for='tags'>Tags (Separadas por vírgula)</label>
-        <input name='tags' id='tags' value="{{post.tags}}" />
-    </div>
+    <label for='tags'>Tags (comma-separated)</label>
+    <input name='tags' id='tags' value="{{post.tags}}" />
 
-    <div>
-        <input type='submit' value='Salvar' />
-    </div>
+    <input type='submit' value='Save' />
 </form>
 
-<a href="/blog">Voltar</a>
+<a href="/">Back</a>

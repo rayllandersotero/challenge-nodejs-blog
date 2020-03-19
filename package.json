@@ -1,7 +1,7 @@
 {
-  "name": "b7web-node",
-  "version": "1.0.0",
-  "description": "Projeto para estudar o curso de node + mongoDB da b7web",
+  "name": "challenge-nodejs-blog",
+  "version": "2.0.0",
+  "description": "This was a challenge of the course at B7web to create a blog using just Nodejs",
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server.js"

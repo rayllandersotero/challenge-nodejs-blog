@@ -1,47 +1,46 @@
-const siteTitle = 'Mustache Template'
+const siteTitle = 'Challenge NodeJs Blog'
 
-exports.siteLang = "pt_BR"
 exports.siteTitle = siteTitle
 exports.menu = [
     {
         text: "Blog",
         slug: "/",
-        title: `Blog de ${siteTitle}`,
+        title: `Blog of ${siteTitle}`,
         guest: true,
         logged: true
     },
     {
         text: "Add Post",
         slug: "/post/add",
-        title: `Adicionar um post em ${siteTitle}`,
+        title: `Add a title on ${siteTitle}`,
         guest: false,
         logged: true
     },
     {
-        text: "Registrar",
+        text: "Register",
         slug: "/register",
-        title: `Registar em ${siteTitle}`,
+        title: `Register on ${siteTitle}`,
         guest: true,
         logged: false
     },
     {
         text: "Login",
         slug: "/login",
-        title: `Logar em ${siteTitle}`,
+        title: `Login on ${siteTitle}`,
         guest: true,
         logged: false
     },
     {
-        text: "Sair",
+        text: "Logout",
         slug: "/logout",
-        title: `Deslogar em ${siteTitle}`,
+        title: `Logout ${siteTitle}`,
         guest: false,
         logged: true
     },
     {
-        text: "Perfil",
+        text: "Profile",
         slug: "/profile",
-        title: `Editar Perfil`,
+        title: `Edit profile`,
         guest: false,
         logged: true
     }
