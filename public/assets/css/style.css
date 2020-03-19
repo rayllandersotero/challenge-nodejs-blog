@@ -40,6 +40,7 @@ a {
 	text-decoration: none;
 	color: var(--theme-color);
 	width: fit-content;
+	font-size: 1.1rem;
 }
 
 a:hover {
@@ -59,7 +60,11 @@ header {
 	align-items: center;
 	border-bottom: 2px solid var(--background-border);
 	box-shadow: 0 0 4px var(--background-border);
-	padding-bottom: 1rem;
+	padding: 0 1rem 1rem 1rem;
+}
+
+header h1 {
+	text-align: center;
 }
 
 header ul {
@@ -83,7 +88,8 @@ section {
 	align-items: stretch;
 	flex: 2;
 	background: var(--background-border);
-	padding-bottom: 30px;
+	padding: 0 1rem 1rem 1rem;
+	overflow: hidden;
 }
 
 .column {
@@ -104,13 +110,16 @@ section {
 
 .column .tags {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-wrap: nowrap;
+	width: 100%;
+	padding-bottom: 10px;
 	margin-bottom: 30px;
+	overflow-x: auto;
 }
 
 .column .tag {
-	margin: 0 0.5rem;
+	margin: 0 1rem;
+	min-width: fit-content;
 }
 
 .column .tag.selected a {
@@ -121,16 +130,17 @@ section {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .column .post {
 	display: flex;
-	flex: 1;
 	flex-direction: column;
 	justify-content: stretch;
 	background: var(--background);
 	padding: 10px;
 	margin-bottom: 1rem;
+	width: 100%;
 	max-width: 320px;
 	border-radius: 4px;
 	border: 1px solid var(--background);
@@ -156,26 +166,30 @@ section {
 }
 
 .post .post-text {
-	height: 200px;
+	max-height: 200px;
 	overflow-y: auto;
-	margin-right: 5px;
+	padding-right: 5px;
+}
+
+.column .tags::-webkit-scrollbar {
+	height: 2px;
 }
 
 .post .post-text::-webkit-scrollbar {
 	width: 5px;
-	margin-left: 5px;
-	border: 1px solid red;
-	border-radius: 4px;
 }
 
+.column .tags::-webkit-scrollbar-track,
 .post .post-text::-webkit-scrollbar-track {
 	background: var(--background-border);
 }
 
+.column .tags::-webkit-scrollbar-thumb,
 .post .post-text::-webkit-scrollbar-thumb {
 	background: var(--theme-color);
 }
 
+.column .tags::-webkit-scrollbar-thumb:hover,
 .post .post-text::-webkit-scrollbar-thumb:hover {
 	background: var(--theme-hover);
 }
@@ -196,6 +210,8 @@ section {
 .column form input,
 .column form textarea {
 	margin-bottom: 10px;
+	border-radius: 4px;
+	border: 1px solid var(--font-color);
 }
 
 .column form input {
@@ -231,6 +247,52 @@ footer {
 	background: sandybrown;
 	color: #fff;
 	padding: 10px;
-    text-align: center;
-    font-weight: bold;
+	text-align: center;
+	font-weight: bold;
+}
+
+@media (max-width: 1023px) {
+	.column {
+		max-width: 660px;
+	}
+}
+
+@media (max-width: 690px) {
+	.column {
+		max-width: 320px;
+	}
+}
+
+@media (max-width: 425px) {
+	.column {
+		max-width: 100%;
+	}
+
+	.column .posts {
+		justify-content: center;
+	}
+
+	.column .post {
+		max-width: 100%;
+	}
+
+	.post a {
+		width: 100%;
+		text-align: center;
+	}
+
+	.post img {
+		width: 100%;
+		height: auto;
+	}
+
+	.post .post-text {
+		height: fit-content;
+	}
+}
+
+@media (max-width: 353px) {
+	header h1 {
+		font-size: 1.9rem;
+	}
 }
