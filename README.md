@@ -41,4 +41,4 @@ I really enjoyed working with Mustache on the front end, an easy and quick tool 
 Although styling was not the focus of this challenge, I decided to give it a little time to bring it to Github.
 
 ## License
-I'm making this code available with the [MIT License] (https://github.com/rayllandersotero/challenge-nodejs-blog/blob/master/LICENSE) for the community to use as they prefer.
+I'm making this code available with the [MIT License](https://github.com/rayllandersotero/challenge-nodejs-blog/blob/master/LICENSE) for the community to use as they prefer.
