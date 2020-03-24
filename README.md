@@ -1,24 +1,17 @@
 # challenge-nodejs-blog
-This was a challenge of the course at B7web to create a blog using just Nodejs.
+This was a challenge of a course to create a blog using just Nodejs.
 > This code was written in 2019 when I was getting to know NodeJs, although today I wouldn't choose to write the code that way, it served as a lot of learning.
 
-## Dependencies worked on in this challenge
-- cookie-parser
-- dotenv
-- express
-- express-flash
-- express-session
-- jimp
-- mongoose
-- multer
-- mustache-express
-- nodemailer
-- passport
-- passport-local
-- passport-local-mongoose
-- slug
-- uuid
-- nodemon
+## Languages, technologies and dependencies worked on in this challenge
+- NodeJs for back-end;
+- Express for productivity back-end routes;
+- MongoDB for NoSQL database;
+- Mongoose for productivity database queries;
+- Dotenv for security keys;
+- Multer for uploading images;
+- Mustache-express for front-end web;
+- Nodemailer for productivity send email;
+- Passport for authorization sessions.
 
 ## About the challenge
 The challenge was to create a blog.
